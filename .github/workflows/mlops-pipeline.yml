@@ -22,7 +22,6 @@ on:
                 default: "false"
     release:
         types: [created]
-    push:
         branches: [main]
         tags: ["v*.*.*"]
 
