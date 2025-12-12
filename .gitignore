@@ -39,4 +39,3 @@ dist/
 
 # Ignore all .pkl files (models, preprocessors, etc.)
 *.pkl
-

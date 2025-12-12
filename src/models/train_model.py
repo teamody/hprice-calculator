@@ -14,6 +14,7 @@ import logging
 from mlflow.tracking import MlflowClient
 import platform
 import sklearn
+import datetime
 
 # -----------------------------
 # Configure logging
@@ -57,7 +58,8 @@ def main(args):
 
     if args.mlflow_tracking_uri:
         mlflow.set_tracking_uri(args.mlflow_tracking_uri)
-        mlflow.set_experiment(model_cfg['name'])
+        # mlflow.delete_experiment(model_cfg['name'])
+        mlflow.set_experiment(f"{model_cfg['name']}123")
 
     # Load data
     data = pd.read_csv(args.data)
@@ -93,7 +95,8 @@ def main(args):
         client = MlflowClient()
         try:
             client.create_registered_model(model_name)
-        except mlflow.exceptions.RestException:
+        except mlflow.exceptions.RestException as e:
+            print(e)
             pass  # already exists
 
         model_version = client.create_model_version(
