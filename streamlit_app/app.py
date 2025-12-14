@@ -7,7 +7,7 @@ import socket  # For hostname and IP address
 
 # Set the page configuration (must be the first Streamlit command)
 st.set_page_config(
-    page_title="House Price Predictor",
+    page_title="House Price Predictor v2",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
