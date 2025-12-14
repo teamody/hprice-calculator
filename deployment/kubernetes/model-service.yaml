@@ -6,11 +6,14 @@ metadata:
   name: model
 spec:
   ports:
-  - name: "8000"
-    nodePort: 30100
-    port: 8000
-    protocol: TCP
-    targetPort: 8000
+    - name: "8000"
+      nodePort: 30100
+      port: 8000
+      protocol: TCP
+      targetPort: 8000
+    - name: metrics
+      port: 9100
+      targetPort: 9100
   selector:
     app: model
   type: NodePort
