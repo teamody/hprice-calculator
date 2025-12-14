@@ -16,9 +16,9 @@ spec:
         app: streamlit
     spec:
       containers:
-      - image: akataya90/streamlit:v2
-        name: streamlit
-        ports:
-        - containerPort: 8501
-        resources: {}
+        - image: akataya90/streamlit:latest
+          name: streamlit
+          ports:
+            - containerPort: 8501
+          resources: {}
 status: {}
